@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const User = require("../models/Usuario");
-const bcrypt = require("bcrypt");
 
 module.exports = {
     signin: async (req, res) => {

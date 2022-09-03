@@ -17,6 +17,7 @@ router.post('/catalogo', CatalogoController.add);
 router.get('/catalogo/all', CatalogoController.findAll);
 router.put('/catalogo/:id', CatalogoController.update);
 router.get('/catalogo/:id', CatalogoController.findById);
+router.get('/catalogo/:id/secao', CatalogoController.findAllSecoesById);
 
 router.post('/solicitacao', SolicitacaoController.add);
 router.put('/solicitacao/:id', SolicitacaoController.update);

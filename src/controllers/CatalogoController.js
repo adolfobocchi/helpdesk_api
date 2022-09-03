@@ -91,5 +91,26 @@ module.exports = {
             res.status(200).json(catalogo);
             return;
         })
-    }
+    },
+
+    findAllSecoesById: async (req, res) => {
+        const id = req.params.id;
+        Catalogo.findOne({_id: id}, 'secoes -_id', (err, secoes) => {
+            if (err) {
+                res.status(500).json({
+                    error: "Erro desconhecido!",
+                });
+                return;
+            }
+            if (!secoes) {
+                res.status(400).json({
+                    error: "catalogo Inválido!",
+                });
+                return;
+            }
+            console.log(secoes);
+            res.status(200).json(secoes['secoes']);
+            return;
+        })
+    },
 }
